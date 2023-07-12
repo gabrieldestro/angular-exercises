@@ -1,0 +1,11 @@
+@import url('../../../config-scss/rem-calc.scss');
+
+// wont be replicated in other components
+:host {
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4em 0;
+    }   
+}

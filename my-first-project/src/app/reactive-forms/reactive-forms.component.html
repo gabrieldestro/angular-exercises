@@ -1,0 +1,26 @@
+<form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <input type="text" formControlName="firstName">
+    <span *ngIf="registerForm.get('firstName')?.errors && registerForm.get('firstName')?.touched">Please enter a name.</span>
+    <br>
+    <br>
+    <input type="text" formControlName="surName">
+    <span *ngIf="registerForm.get('surName')?.errors && registerForm.get('surName')?.touched">Please enter a valid sur name.</span>
+    <br>
+    <br>
+    <input type="email" formControlName="email">
+    <br>
+    <br>
+
+    <button [disabled]="registerForm.invalid">Send</button>
+    {{ registerForm.get('firstName')?.value }}
+    <br>
+    {{ registerForm.get('surName')?.value }}
+    <br>
+    {{ registerForm.get('firstName')?.errors | json }}
+    <br>
+    {{ registerForm.get('firstName')?.touched | json }}
+    <br>
+    {{ registerForm.get('firstName')?.dirty | json }}
+    <br>
+    {{ registerForm.get('surName')?.errors | json }}
+</form>

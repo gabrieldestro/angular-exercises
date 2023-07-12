@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-data-binding',
+  templateUrl: './data-binding.component.html',
+  styleUrls: ['./data-binding.component.scss']
+})
+export class DataBindingComponent {
+  public name: string = "Gabriel";
+  public age: number = 25;
+
+  public buttonDisabled: boolean = false;
+
+  public disableButton(valor: MouseEvent) {
+    console.log(valor);
+  } 
+}

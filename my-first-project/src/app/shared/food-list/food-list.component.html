@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let item of foodList">
+        {{item.id}}-<input type="text" (keyup.enter)="foodListEdit(item.id, item.name)" [(ngModel)]="item.name">
+        <button (click)="foodListDelete(item.id)">Delete</button>
+    </li>
+</ul>

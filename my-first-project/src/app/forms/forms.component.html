@@ -1,0 +1,44 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <br>
+    {{form.valid }}
+    <br>
+
+    <label>Name: </label>
+    <input type="text" name="surname" #surname="ngModel" [ngModel]="surname.value" required>
+    <span *ngIf="!surname.valid && (surname.dirty || surname.touched)">Invalid</span>
+    <br>
+
+    {{surname.valid}}
+    {{surname.dirty}}
+    {{surname.touched}}
+
+    <br>
+    <input type="radio" name="race" value="Human" ngModel>
+    <label>Human</label>
+    <br>
+    <input type="radio" name="race" value="Dog" ngModel>
+    <label>Dog</label>
+    <br>
+
+    <input type="checkbox" name="angular" ngModel>
+    <label>Angular</label>
+    <br>
+    <input type="checkbox" name="vue" ngModel>
+    <label>Vue</label>
+    <br>
+    <input type="checkbox" name="react" ngModel>
+    <label>React</label>
+    <br>
+
+    <select name="foods" ngModel>
+        <option value="">Select a food</option>
+        <!--<option *ngFor="let item of list" [value]="item.food">{{item.food}}</option>-->
+        <option *ngFor="let item of list" [ngValue]="item">{{item.food}}</option>
+    </select>
+
+    <br>
+
+    <button [disabled]="!form.valid" (submit)="form">Send</button>
+</form>
+
+{{ form.value | json }}

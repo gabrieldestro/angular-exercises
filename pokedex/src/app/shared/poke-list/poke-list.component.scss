@@ -1,0 +1,71 @@
+@import url('../../../config-scss/variables.scss');
+
+$padding: 1.6rem;
+$padding_small: 0.2rem;
+
+:host {
+   .list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: $padding 0;
+   
+      .pokemon {
+         position: relative;
+         display: flex;
+         width: calc(49% - 2*$padding);
+         height: 6rem;
+         background: var(--white);
+         padding: $padding;
+         border-radius: 1rem;
+         margin-bottom: 1rem;
+         text-decoration: none;
+         color: var(--primary-color);
+   
+         &__status {
+            h2 {
+               font-size: 2rem;
+               font-style: italic;
+               font-weight: 700;
+               margin-bottom: 10px;
+               text-transform: capitalize;
+            }
+   
+            ul {
+               display: flex;
+               flex-direction: column;
+            }
+   
+            li {
+               background: var(--gray);
+               font-size: 0.6rem;
+               display: flex;
+               justify-content: center;
+               align-content: center;
+               border-radius: 3rem;
+               padding: $padding_small;
+               width: 4rem;
+               margin: 2px;
+            }
+         }
+   
+         &__image {
+            position: absolute;
+            height: 6rem;
+            width: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            bottom: $padding;
+            right: $padding;
+   
+            background: url("../../../assets/bg/background-list-pokemons.svg") no-repeat;
+   
+            img {
+               width: 5rem;
+               height: 5rem;
+            }
+         }
+      }
+   }
+}
